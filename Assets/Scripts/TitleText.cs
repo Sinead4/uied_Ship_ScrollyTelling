@@ -11,8 +11,8 @@ public class TitleText : MonoBehaviour
     {
 
         title = GetComponent<Text>();
-        title.text = "Die Brigantine";
-        title.fontStyle = FontStyle.Bold;
+        // title.text = "Die Brigantine";
+        // title.fontStyle = FontStyle.Bold;
     }
 
     // Update is called once per frame

@@ -1,13 +1,16 @@
+using System;
 using UnityEngine;
 using System.Collections;
 
-public class PathFollower : MonoBehaviour {
+public class PathFollower : MonoBehaviour
+{
 
-    public float speed = 3f;
+    private float speed = 50f;
     public Transform pathParent;
     Transform targetPoint;
     int index;
     public GameObject objLookingat;
+    public Camera camera;
 
     void OnDrawGizmos()
     {
@@ -28,15 +31,21 @@ public class PathFollower : MonoBehaviour {
 	
     // Update is called once per frame
     void Update () {
-        transform.position = Vector3.MoveTowards (transform.position, targetPoint.position, speed * Time.deltaTime);
-        transform.LookAt(objLookingat.transform);
-        if (Vector3.Distance (transform.position, targetPoint.position) < 0.1f) 
-        {
-            index++;
-            index %= pathParent.childCount;
-            targetPoint = pathParent.GetChild (index);
 
+        if (objLookingat.transform.position.x == 14 && Input.mouseScrollDelta.y == -1)
+        {
+            Debug.Log("Camera Pos.: " + camera.transform.position);
+            transform.position = Vector3.MoveTowards (transform.position, targetPoint.position, speed * Time.deltaTime);
+                    transform.LookAt(objLookingat.transform);
+                    if (Vector3.Distance (transform.position, targetPoint.position) < 0.1f) 
+                    {
+                        index++;
+                        index %= pathParent.childCount;
+                        targetPoint = pathParent.GetChild (index);
+            
+                    }
         }
+        
        
     }
 }

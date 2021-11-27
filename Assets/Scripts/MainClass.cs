@@ -12,13 +12,14 @@ public class MainClass : MonoBehaviour
     private Vector3 startTitlePos;
     public GameObject title;
     public GameObject shipObj;
-   
+
     void Start()
     {
         // newShip = gameObject.AddComponent<Ship>();
             // new Ship(new Vector3(-165, 3.6f, 60));
         // startShipPos = this.transform.position;
         startTitlePos = title.transform.position;
+        
     }
 
     // Update is called once per frame
@@ -31,8 +32,15 @@ public class MainClass : MonoBehaviour
             
             Vector3 newPos = new Vector3(14, shipObj.transform.position.y, shipObj.transform.position.z);
             transform.position = Vector3.MoveTowards(transform.position, newPos, 1.4f);
-            
+
+            if (startTitlePos.x >= 769)
+            {
+                title.SetActive(false); //Funktioniert nicht ???
+            }
         }
+        
+       
+        
 
         // if (Input.mouseScrollDelta.y == -1)
         // {

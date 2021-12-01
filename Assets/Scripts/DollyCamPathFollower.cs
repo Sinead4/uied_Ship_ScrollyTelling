@@ -1,22 +1,36 @@
 ﻿using UnityEngine;
 using Cinemachine;
+using UnityEngine.Serialization;
+
 namespace DefaultNamespace
 {
     public class DollyCamPathFollower : MonoBehaviour
     {
         public float speed = 10f;
         private float distanceTraveled;
+        public Transform LookAtPoint;
     
         public CinemachineVirtualCamera currentCamera;
-        public CinemachineTrackedDolly cinemachineTrackedDolly;
+        private CinemachineTrackedDolly cinemachineCamera;
     
         
         void FixedUpdate()
         {
             distanceTraveled += speed * Input.mouseScrollDelta.y;
         
-            cinemachineTrackedDolly = currentCamera.GetCinemachineComponent<CinemachineTrackedDolly> ();
-            cinemachineTrackedDolly.m_PathPosition = distanceTraveled;
+            cinemachineCamera = currentCamera.GetCinemachineComponent<CinemachineTrackedDolly> ();
+            cinemachineCamera.m_PathPosition = distanceTraveled;
+            currentCamera.m_LookAt = null;
+            currentCamera.transform.rotation = Quaternion.Euler(8,3,0);
+            
+            if (cinemachineCamera.m_PathPosition > 150)
+            {
+                currentCamera.m_LookAt = LookAtPoint;
+                //currentCamera.transform.rotation = Quaternion.Euler(0,-90,0);
+                //transform.LookAt(ColonialShip);
+            }
+           
+            
         }
     }
     

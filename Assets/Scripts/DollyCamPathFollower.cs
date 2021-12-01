@@ -4,7 +4,7 @@ namespace DefaultNamespace
 {
     public class DollyCamPathFollower : MonoBehaviour
     {
-        public float speed = 2f;
+        public float speed = 10f;
         private float distanceTraveled;
     
         public CinemachineVirtualCamera currentCamera;

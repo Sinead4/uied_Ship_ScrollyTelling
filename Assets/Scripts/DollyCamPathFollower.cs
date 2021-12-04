@@ -9,6 +9,7 @@ namespace DefaultNamespace
         public float speed = 10f;
         private float distanceTraveled;
         public Transform LookAtPoint;
+        public Transform ship;
     
         public CinemachineVirtualCamera currentCamera;
         private CinemachineTrackedDolly cinemachineCamera;
@@ -16,6 +17,8 @@ namespace DefaultNamespace
         
         void FixedUpdate()
         {
+            
+            Debug.Log(distanceTraveled);
             distanceTraveled += speed * Input.mouseScrollDelta.y;
         
             cinemachineCamera = currentCamera.GetCinemachineComponent<CinemachineTrackedDolly> ();
@@ -29,6 +32,11 @@ namespace DefaultNamespace
                 //currentCamera.transform.rotation = Quaternion.Euler(0,-90,0);
                 //transform.LookAt(ColonialShip);
             }
+
+            // if (cinemachineCamera.m_PathPosition == 350)
+            // {
+            //     ship.transform.rotation = Quaternion.Euler(0,-90,0);
+            // }
            
             
         }

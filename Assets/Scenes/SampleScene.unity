@@ -214,7 +214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61047213}
   m_LocalRotation: {x: 0.06973256, y: 0.02611316, z: -0.0018260097, w: 0.99722224}
-  m_LocalPosition: {x: -1.7555739, y: 43.16406, z: -224.89435}
+  m_LocalPosition: {x: -142.55647, y: 44.68759, z: -27.992222}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1325750606}
@@ -235,6 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   LookAtPoint: {fileID: 2038356126}
+  ship: {fileID: 2069083155}
   currentCamera: {fileID: 61047214}
 --- !u!1001 &163615178
 PrefabInstance:
@@ -447,7 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a200b19ca1a9685429ed7e043c28e904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Resolution: 100
+  m_Resolution: 10
   m_Appearance:
     pathColor: {r: 0, g: 1, b: 0, a: 1}
     inactivePathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
@@ -462,13 +463,9 @@ MonoBehaviour:
     roll: 0
   - position: {x: -32.480705, y: 2.796404, z: 60.11895}
     roll: 0
-  - position: {x: -68.74574, y: 52.707375, z: 61.24157}
+  - position: {x: -68.74574, y: 52.707375, z: 66.70038}
     roll: 0
-  - position: {x: -152.21368, y: 102.61835, z: 71.56368}
-    roll: 0
-  - position: {x: -159.29056, y: 100.98223, z: 66.2936}
-    roll: 0
-  - position: {x: -150.55988, y: 100.75386, z: 66.234665}
+  - position: {x: -164.08609, y: 102.61835, z: 70.865105}
     roll: 0
 --- !u!4 &490086418
 Transform:

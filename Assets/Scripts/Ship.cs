@@ -1,7 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace ShipScrolly
 {
     public class Ship: MonoBehaviour
     {

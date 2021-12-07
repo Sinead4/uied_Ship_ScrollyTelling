@@ -2,22 +2,25 @@
 using Cinemachine;
 using UnityEngine.Serialization;
 
-namespace DefaultNamespace
+namespace ShipScrolly
 {
     public class DollyCamPathFollower : MonoBehaviour
     {
         public float speed = 10f;
-        private float distanceTraveled;
+        public float distanceTraveled;
         public Transform LookAtPoint;
         
         public CinemachineVirtualCamera currentCamera;
         private CinemachineTrackedDolly cinemachineCamera;
-    
-        
+
+        public TextBoxHandling handling;
+       // public GameObject title;
+       // public GameObject firstTextBox;
+
         void FixedUpdate()
         {
-            Debug.Log(distanceTraveled);
-            distanceTraveled += speed * Input.mouseScrollDelta.y;
+            Debug.Log("distanceTraveled is: " + distanceTraveled);
+            distanceTraveled += (speed * Input.mouseScrollDelta.y)*-1;
         
             cinemachineCamera = currentCamera.GetCinemachineComponent<CinemachineTrackedDolly> ();
             cinemachineCamera.m_PathPosition = distanceTraveled;
@@ -27,6 +30,10 @@ namespace DefaultNamespace
             {
                 currentCamera.m_LookAt = LookAtPoint;
             }
+
+            handling.titleHandling(distanceTraveled);
+            handling.textBoxes(distanceTraveled);
+           
         }
     }
     

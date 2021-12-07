@@ -11,6 +11,8 @@ public class TextBoxHandling : MonoBehaviour
 
     public GameObject compass;
 
+    public Camera MainCamera;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,28 +38,30 @@ public class TextBoxHandling : MonoBehaviour
     {
         if (distance >= 230)
         {
-            Debug.Log("In titleHandling");
             title.SetActive(false);
         }
     }
 
     public void textBoxes(float distance)
     {
-        Debug.Log("In textBoxes");
+
         if (distance >= 230 && distance <= 350)
         {
-            Debug.Log("In first TextBox distance= " + distance);
             firstTextBox.SetActive(true);
+            firstTextBox.transform.LookAt(MainCamera.transform);
         }
         else
         {
             firstTextBox.SetActive(false);
         }
 
-        if(distance >= 390)
+        if(distance >= 390 && distance <= 490)
         {
-            Debug.Log("In Kopass Obj distance= " + distance);
             compass.SetActive(true);
+        }
+        else
+        {
+            compass.SetActive(false);
         }
 
     }

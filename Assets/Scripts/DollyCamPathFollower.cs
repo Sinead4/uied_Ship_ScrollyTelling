@@ -14,8 +14,6 @@ namespace ShipScrolly
         private CinemachineTrackedDolly cinemachineCamera;
 
         public TextBoxHandling handling;
-       // public GameObject title;
-       // public GameObject firstTextBox;
 
         void FixedUpdate()
         {
@@ -24,12 +22,17 @@ namespace ShipScrolly
         
             cinemachineCamera = currentCamera.GetCinemachineComponent<CinemachineTrackedDolly> ();
             cinemachineCamera.m_PathPosition = distanceTraveled;
-            currentCamera.m_LookAt = null;
+            currentCamera.m_LookAt = handling.title.transform;
 
             if (cinemachineCamera.m_PathPosition > 150)
             {
                 currentCamera.m_LookAt = LookAtPoint;
             }
+            else
+            {
+                currentCamera.m_LookAt = handling.title.transform;
+            }
+
 
             handling.titleHandling(distanceTraveled);
             handling.textBoxes(distanceTraveled);

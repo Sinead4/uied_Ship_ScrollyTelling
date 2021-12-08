@@ -7,7 +7,7 @@ public class TextBoxHandling : MonoBehaviour
 {
     public GameObject firstTextBox;
     private DollyCamPathFollower dcpf;
-    public GameObject title;
+    public GameObject title { get; set; }
 
     public GameObject compass;
 
@@ -20,7 +20,7 @@ public class TextBoxHandling : MonoBehaviour
         firstTextBox.SetActive(false);
 
         dcpf = new DollyCamPathFollower();
-        title = GameObject.Find("Title");
+        title = GameObject.Find("TitleObject");
         title.SetActive(true);
 
         compass = GameObject.Find("Kompass");
@@ -49,6 +49,7 @@ public class TextBoxHandling : MonoBehaviour
         {
             firstTextBox.SetActive(true);
             firstTextBox.transform.LookAt(MainCamera.transform);
+            
         }
         else
         {

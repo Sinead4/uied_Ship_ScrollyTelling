@@ -13,7 +13,8 @@ namespace ShipScrolly
         public CinemachineVirtualCamera currentCamera;
         private CinemachineTrackedDolly cinemachineCamera;
 
-        public TextBoxHandling handling;
+        public TextBoxHandling textBoxHandling;
+        public SailHandling sailHandling;
 
         void FixedUpdate()
         {
@@ -22,7 +23,7 @@ namespace ShipScrolly
         
             cinemachineCamera = currentCamera.GetCinemachineComponent<CinemachineTrackedDolly> ();
             cinemachineCamera.m_PathPosition = distanceTraveled;
-            currentCamera.m_LookAt = handling.title.transform;
+            currentCamera.m_LookAt = textBoxHandling.title.transform;
 
             if (cinemachineCamera.m_PathPosition > 150)
             {
@@ -30,13 +31,15 @@ namespace ShipScrolly
             }
             else
             {
-                currentCamera.m_LookAt = handling.title.transform;
+                currentCamera.m_LookAt = textBoxHandling.title.transform;
             }
 
 
-            handling.titleHandling(distanceTraveled);
-            handling.textBoxes(distanceTraveled);
-           
+            textBoxHandling.titleHandling(distanceTraveled);
+            textBoxHandling.textBoxes(distanceTraveled);
+            sailHandling.handlineOutlineShader(distanceTraveled);
+
+
         }
     }
     

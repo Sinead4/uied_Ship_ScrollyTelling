@@ -11,7 +11,7 @@ namespace ShipScrolly
         public Transform LookAtPoint;
         
         public CinemachineVirtualCamera currentCamera;
-        private CinemachineTrackedDolly cinemachineCamera;
+        public static CinemachineTrackedDolly cinemachineCamera;
 
         public TextBoxHandling textBoxHandling;
         public SailHandling sailHandling;

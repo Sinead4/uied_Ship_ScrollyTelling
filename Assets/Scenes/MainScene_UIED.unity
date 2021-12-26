@@ -753,6 +753,10 @@ MonoBehaviour:
   sailMiddleFront: {fileID: 805663108}
   sailMiddleBack: {fileID: 1661938069}
   OutlineShader: {fileID: 4800000, guid: e9fc20dac6ccc084187f0e6e8d64e1a6, type: 3}
+  growthBound: 1.01
+  shrinkBound: 0.99
+  currentRatio: 1
+  approachSpeed: 0.02
 --- !u!1 &334919720
 GameObject:
   m_ObjectHideFlags: 0

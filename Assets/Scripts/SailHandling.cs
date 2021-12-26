@@ -8,6 +8,7 @@ public class SailHandling : MonoBehaviour
     public GameObject sailMiddleFront;
     public GameObject sailMiddleBack;
     public Shader OutlineShader;
+    public Shader NoOutlineShader;
 
     //Pulse 
     public float growthBound;

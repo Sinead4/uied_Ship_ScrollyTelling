@@ -15,6 +15,7 @@ namespace ShipScrolly
 
         public TextBoxHandling textBoxHandling;
         public SailHandling sailHandling;
+        public ConstantMovement constantMovement;
 
         void FixedUpdate()
         {
@@ -38,6 +39,7 @@ namespace ShipScrolly
             textBoxHandling.titleHandling(distanceTraveled);
             textBoxHandling.textBoxes(distanceTraveled);
             sailHandling.handlineOutlineShader(distanceTraveled);
+            constantMovement.moveForward(distanceTraveled);
 
 
         }

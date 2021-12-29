@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using Cinemachine;
-using UnityEngine.Serialization;
+
 
 namespace ShipScrolly
 {
@@ -15,6 +15,8 @@ namespace ShipScrolly
 
         public TextBoxHandling textBoxHandling;
         public SailHandling sailHandling;
+
+        public ConstantMovement constantMovement;
 
         void FixedUpdate()
         {
@@ -39,6 +41,7 @@ namespace ShipScrolly
             textBoxHandling.textBoxes(distanceTraveled);
             sailHandling.handlineOutlineShader(distanceTraveled);
 
+            constantMovement.constantShipMovement(distanceTraveled);
 
         }
     }

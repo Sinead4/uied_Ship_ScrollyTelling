@@ -1,20 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MilesTextHandling : MonoBehaviour
 {
     public Text currentSpeedText;
-    private GameObject ship = GameObject.Find("Colonial Ship");
     
+    private void Start()
+    {
+        currentSpeedText.gameObject.SetActive(false);
+    }
 
     public void MilesTextPositioning(Vector3 position, int distanceTraveled)
     {
-        currentSpeedText.gameObject.SetActive(true);
-        if (distanceTraveled < 650)
+        if (distanceTraveled > 650 && distanceTraveled < 1500)
         {
-            currentSpeedText.gameObject.SetActive(false);
+            currentSpeedText.gameObject.SetActive(true);
         }
         float speed = distanceTraveled / 50 + 2 * distanceTraveled / 217;
         Vector3 changeZPosition = new Vector3(0, 60, -30);

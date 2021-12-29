@@ -8,7 +8,7 @@ public class ConstantMovement : MonoBehaviour
 {
     public float speed;
 
-    public void constantShipMovement(float distanceTraveled)
+    public void ConstantShipMovement(float distanceTraveled)
     {
         if (distanceTraveled > 650)
         {

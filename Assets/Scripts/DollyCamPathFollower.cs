@@ -17,19 +17,18 @@ namespace ShipScrolly
 
         public TextBoxHandling textBoxHandling;
         public SailHandling sailHandling;
-
         public ConstantMovement constantMovement;
+        public MilesTextHandling milesTextHandling;
 
         void FixedUpdate()
         {
-           
             distanceTraveled += (speed * Input.mouseScrollDelta.y)*-1;
-        
             cinemachineCamera = vCam1.GetCinemachineComponent<CinemachineTrackedDolly> ();
             cinemachineCamera.m_PathPosition = distanceTraveled;
             vCam1.m_LookAt = textBoxHandling.title.transform;
 
-            if (cinemachineCamera.m_PathPosition > 150)
+            //Change look at point--------------------------
+            if (distanceTraveled > 150)
             {
                 vCam1.m_LookAt = LookAtPoint;
             }
@@ -38,11 +37,12 @@ namespace ShipScrolly
                 vCam1.m_LookAt = textBoxHandling.title.transform;
             }
 
-            if (cinemachineCamera.m_PathPosition>650)
+            //Change camera -----------------------------------
+            if (distanceTraveled>650)
             {
                 vCam2.Priority = 11;
             }
-            else if (cinemachineCamera.m_PathPosition < 650)
+            else if (distanceTraveled < 650)
             {
                 vCam2.Priority = 9;
             }
@@ -50,9 +50,9 @@ namespace ShipScrolly
             textBoxHandling.titleHandling(distanceTraveled);
             textBoxHandling.textBoxes(distanceTraveled);
             sailHandling.handlineOutlineShader(distanceTraveled);
-
-            constantMovement.constantShipMovement(distanceTraveled);
-
+            constantMovement.ConstantShipMovement(distanceTraveled);
+            
+            milesTextHandling.MilesTextPositioning(LookAtPoint.transform.position, (int)constantMovement.speed);
         }
     }
     

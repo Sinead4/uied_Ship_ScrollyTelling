@@ -46,13 +46,17 @@ namespace ShipScrolly
             {
                 vCam2.Priority = 9;
             }
+            if (distanceTraveled > 1500)
+            {
+                vCam2.Priority = 9;
+            }
             
             textBoxHandling.titleHandling(distanceTraveled);
             textBoxHandling.textBoxes(distanceTraveled);
             sailHandling.handlineOutlineShader(distanceTraveled);
             constantMovement.ConstantShipMovement(distanceTraveled);
             
-            milesTextHandling.MilesTextPositioning(LookAtPoint.transform.position, (int)constantMovement.speed);
+            milesTextHandling.MilesTextPositioning(LookAtPoint.transform.position, (int)distanceTraveled);
         }
     }
     

@@ -10,7 +10,8 @@ public class ConstantMovement : MonoBehaviour
 
     public void ConstantShipMovement(float distanceTraveled)
     {
-        if (distanceTraveled > 650)
+        speed = distanceTraveled / 35 + 10 * distanceTraveled / 650;
+        if (distanceTraveled > 650 && distanceTraveled < 1500)
         {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }

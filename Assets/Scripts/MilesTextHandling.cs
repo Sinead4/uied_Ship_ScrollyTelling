@@ -5,23 +5,21 @@ using UnityEngine.UI;
 
 public class MilesTextHandling : MonoBehaviour
 {
-    public Text currentSpeed;
+    public Text currentSpeedText;
     private GameObject ship = GameObject.Find("Colonial Ship");
+    
 
-    private int kmH = 0;
-
-    private int knoten = 0;
-    // Start is called before the first frame update
-    void Start()
+    public void MilesTextPositioning(Vector3 position, int distanceTraveled)
     {
-        
-    }
-
-    public void MilesTextPositioning(Vector3 position, int speed)
-    {
-        Vector3 changeZPosition = new Vector3(0, 0, -30);
-        currentSpeed.transform.position = position+changeZPosition;
-        currentSpeed.text = "Das Schiff fährt " + speed + " km/h.";
+        currentSpeedText.gameObject.SetActive(true);
+        if (distanceTraveled < 650)
+        {
+            currentSpeedText.gameObject.SetActive(false);
+        }
+        float speed = distanceTraveled / 50 + 2 * distanceTraveled / 217;
+        Vector3 changeZPosition = new Vector3(0, 60, -30);
+        currentSpeedText.transform.position = position+changeZPosition;
+        currentSpeedText.text = "Das Schiff fährt " + (int)(speed*1.852) + " Knoten  Das entspricht ca. "+ (int)speed + " km/h";
         
     }
 }

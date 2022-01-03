@@ -15,6 +15,8 @@ public class TextBoxHandling : MonoBehaviour
 
     public GameObject knotenTextBox;
 
+    public GameObject shipsWheelCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -77,6 +79,20 @@ public class TextBoxHandling : MonoBehaviour
         else
         {
             knotenTextBox.SetActive(false);
+        }
+    }
+
+    public void QuestionHandling(Vector3 position, float distanceTraveled)
+    {
+        Vector3 changePosition = new Vector3(0, 5, -7);
+        shipsWheelCanvas.transform.position = position + changePosition;
+        if (distanceTraveled > 1500)
+        {
+            shipsWheelCanvas.SetActive(true);
+        }
+        else
+        {
+            shipsWheelCanvas.SetActive(false);
         }
     }
 }

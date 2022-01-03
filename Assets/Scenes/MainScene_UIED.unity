@@ -2490,7 +2490,7 @@ MonoBehaviour:
   colonialShip: {fileID: 1574732406}
   speed: 10
   distanceTraveled: 0
-  LookAtPoint: {fileID: 1661938070}
+  LookAtPoint: {fileID: 2069083155}
   vCam1: {fileID: 61047214}
   vCam2: {fileID: 793921028}
   vCam3: {fileID: 1622769716}
@@ -2964,7 +2964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 490086417}
-  m_PathPosition: 0
+  m_PathPosition: 1290
   m_PositionUnits: 1
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 2
@@ -3727,11 +3727,6 @@ Transform:
 --- !u!1 &1661938069 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1470687082866054, guid: f855683b127eede4c9d170be2672ae27, type: 3}
-  m_PrefabInstance: {fileID: 163615178}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1661938070 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4343803364043830, guid: f855683b127eede4c9d170be2672ae27, type: 3}
   m_PrefabInstance: {fileID: 163615178}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1661938073

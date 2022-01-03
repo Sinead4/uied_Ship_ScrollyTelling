@@ -25,7 +25,7 @@ namespace ShipScrolly
 
         private void Start()
         {
-            vCam1.Priority = 10;
+            vCam1.Priority = 13;
             vCam2.Priority = 9;
             vCam3.Priority = 8;
         }
@@ -54,6 +54,7 @@ namespace ShipScrolly
             //Change camera -----------------------------------
             if (distanceTraveled>650)
             {
+                vCam1.Priority = 1;
                 vCam2.Priority = 11;
             }
             else if (distanceTraveled < 650)

@@ -23,6 +23,9 @@ namespace ShipScrolly
         public ConstantMovement constantMovement;
         public MilesTextHandling milesTextHandling;
 
+        public GameObject sailOne;
+        public GameObject sailTwo;
+
         private void Start()
         {
             vCam1.Priority = 13;
@@ -36,10 +39,6 @@ namespace ShipScrolly
             cinemachineCamera = vCam1.GetCinemachineComponent<CinemachineTrackedDolly> ();
             cinemachineCamera.m_PathPosition = distanceTraveled;
             vCam1.m_LookAt = textBoxHandling.title.transform;
-            
-            Vector3 changeVCam3Position = new Vector3(-25, 10, 0);
-            vCam3.transform.position = colonialShip.transform.position + changeVCam3Position;
-            vCam3.transform.rotation = colonialShip.transform.rotation;
 
             //Change look at point--------------------------
             if (distanceTraveled > 150)
@@ -63,6 +62,8 @@ namespace ShipScrolly
             }
             if (distanceTraveled > 1500)
             {
+                sailOne.SetActive(false);
+                sailTwo.SetActive(false);
                 vCam2.Priority = 9;
                 vCam3.Priority = 12;
             }

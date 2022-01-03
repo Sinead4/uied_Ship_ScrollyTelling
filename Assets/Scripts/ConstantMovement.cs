@@ -8,19 +8,13 @@ public class ConstantMovement : MonoBehaviour
 {
     public float speed;
 
-    private CinemachineTrackedDolly cinemachine = DollyCamPathFollower.cinemachineCamera;
-    // Start is called before the first frame update
-    void Start()
+    public void ConstantShipMovement(float distanceTraveled)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        speed = distanceTraveled / 35 + 20 * distanceTraveled / 400;
+        if (distanceTraveled > 650 && distanceTraveled < 1500)
+        {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
-        
+        }
         
     }
 }

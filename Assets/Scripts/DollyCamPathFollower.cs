@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Cinemachine;
 using UnityEngine.Serialization;
 
@@ -14,6 +15,7 @@ namespace ShipScrolly
         
         public CinemachineVirtualCamera vCam1;
         public CinemachineVirtualCamera vCam2;
+        public CinemachineVirtualCamera vCam3;
         public static CinemachineTrackedDolly cinemachineCamera;
 
         public TextBoxHandling textBoxHandling;
@@ -21,12 +23,22 @@ namespace ShipScrolly
         public ConstantMovement constantMovement;
         public MilesTextHandling milesTextHandling;
 
+        private void Start()
+        {
+            vCam2.Priority = 9;
+            vCam3.Priority = 8;
+        }
+
         void FixedUpdate()
         {
             distanceTraveled += (speed * Input.mouseScrollDelta.y)*-1;
             cinemachineCamera = vCam1.GetCinemachineComponent<CinemachineTrackedDolly> ();
             cinemachineCamera.m_PathPosition = distanceTraveled;
             vCam1.m_LookAt = textBoxHandling.title.transform;
+            
+            Vector3 changeVCam3Position = new Vector3(-25, 10, 0);
+            vCam3.transform.position = colonialShip.transform.position + changeVCam3Position;
+            vCam3.transform.rotation = colonialShip.transform.rotation;
 
             //Change look at point--------------------------
             if (distanceTraveled > 150)
@@ -43,13 +55,14 @@ namespace ShipScrolly
             {
                 vCam2.Priority = 11;
             }
-            else if (distanceTraveled < 650)
-            {
-                vCam2.Priority = 9;
-            }
+            // else if (distanceTraveled < 650)
+            // {
+            //     vCam2.Priority = 9;
+            // }
             if (distanceTraveled > 1500)
             {
                 vCam2.Priority = 9;
+                vCam3.Priority = 12;
             }
             
             textBoxHandling.titleHandling(distanceTraveled);

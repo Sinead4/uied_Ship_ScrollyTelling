@@ -7,6 +7,7 @@ namespace ShipScrolly
 {
     public class DollyCamPathFollower : MonoBehaviour
     {
+        public GameObject colonialShip;
         public float speed = 10f;
         public float distanceTraveled;
         public Transform LookAtPoint;
@@ -53,10 +54,13 @@ namespace ShipScrolly
             
             textBoxHandling.titleHandling(distanceTraveled);
             textBoxHandling.textBoxes(distanceTraveled);
+            
+            textBoxHandling.KnotenHandling(colonialShip.transform.position, distanceTraveled);
+            
             sailHandling.handlineOutlineShader(distanceTraveled);
             constantMovement.ConstantShipMovement(distanceTraveled);
             
-            milesTextHandling.MilesTextPositioning(LookAtPoint.transform.position, (int)distanceTraveled);
+            milesTextHandling.MilesTextPositioning(colonialShip.transform.position, (int)distanceTraveled);
         }
     }
     

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ShipsWheelRotation : MonoBehaviour
 {
-    private float speed = 5f;
+    private float speed = 4f;
     public GameObject ship;
 
     private void OnMouseDrag()

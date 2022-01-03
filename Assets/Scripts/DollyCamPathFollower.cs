@@ -28,6 +28,7 @@ namespace ShipScrolly
 
         private void Start()
         {
+            //Set priorities for cameras-------------------
             vCam1.Priority = 13;
             vCam2.Priority = 9;
             vCam3.Priority = 8;
@@ -38,7 +39,7 @@ namespace ShipScrolly
             distanceTraveled += (speed * Input.mouseScrollDelta.y)*-1;
             cinemachineCamera = vCam1.GetCinemachineComponent<CinemachineTrackedDolly> ();
             cinemachineCamera.m_PathPosition = distanceTraveled;
-            vCam1.m_LookAt = textBoxHandling.title.transform;
+            //vCam1.m_LookAt = textBoxHandling.title.transform;
 
             //Change look at point--------------------------
             if (distanceTraveled > 150)
@@ -47,7 +48,7 @@ namespace ShipScrolly
             }
             else
             {
-                vCam1.m_LookAt = textBoxHandling.title.transform;
+                //vCam1.m_LookAt = textBoxHandling.title.transform;
             }
 
             //Change camera -----------------------------------
@@ -64,6 +65,11 @@ namespace ShipScrolly
             {
                 sailOne.SetActive(false);
                 sailTwo.SetActive(false);
+                
+            }
+
+            if (distanceTraveled > 1510)
+            {
                 vCam2.Priority = 9;
                 vCam3.Priority = 12;
             }

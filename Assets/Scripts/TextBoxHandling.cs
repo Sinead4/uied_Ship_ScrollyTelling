@@ -6,7 +6,8 @@ using ShipScrolly;
 public class TextBoxHandling : MonoBehaviour
 {
     public GameObject firstTextBox;
-    //private DollyCamPathFollower dcpf;
+    public GameObject sailsTextBox1;
+    public GameObject sailsTextBox2;
     public GameObject title { get; set; }
 
     public GameObject compass;
@@ -93,6 +94,15 @@ public class TextBoxHandling : MonoBehaviour
         else
         {
             shipsWheelCanvas.SetActive(false);
+        }
+    }
+
+    public void sailsTextBoxes(float distance)
+    {
+        if (distance < 510 || distance >= 700)
+        {
+            sailsTextBox1.SetActive(false);
+            sailsTextBox2.SetActive(false);
         }
     }
 }

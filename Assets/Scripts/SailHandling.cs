@@ -8,7 +8,9 @@ public class SailHandling : MonoBehaviour
     public GameObject sailMiddleFront;
     public GameObject sailMiddleBack;
     public Shader OutlineShader;
-    public Shader NoOutlineShader;
+    public Material sailFrontAndBackMaterial;
+    public Material sailMiddleFrontMaterial;
+    public Material sailMiddleBackMaterial;
 
     //Pulse 
     public float growthBound;
@@ -46,10 +48,9 @@ public class SailHandling : MonoBehaviour
         }
         else
         {
-         /*   sailFrontAndBack.GetComponent<MeshRenderer>().material = NoOutlineShader;
-            sailMiddleFront.GetComponent<MeshRenderer>().material = NoOutlineShader;
-            sailMiddleBack.GetComponent<MeshRenderer>().material = NoOutlineShader;
-           */ // Shader wieder wegnehmen
+            sailFrontAndBack.GetComponent<Renderer>().material.CopyPropertiesFromMaterial(sailFrontAndBackMaterial);
+            sailMiddleFront.GetComponent<Renderer>().material.CopyPropertiesFromMaterial(sailMiddleFrontMaterial);
+            sailMiddleBack.GetComponent<Renderer>().material.CopyPropertiesFromMaterial(sailMiddleBackMaterial);
         }
     }
 

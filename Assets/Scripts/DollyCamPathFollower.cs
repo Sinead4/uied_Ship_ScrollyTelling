@@ -38,9 +38,10 @@ namespace ShipScrolly
 
             textBoxHandling.titleHandling(distanceTraveled);
             textBoxHandling.textBoxes(distanceTraveled);
+            textBoxHandling.sailsTextBoxes(distanceTraveled);
             sailHandling.handlineOutlineShader(distanceTraveled);
             constantMovement.moveForward(distanceTraveled);
-
+           
 
         }
     }

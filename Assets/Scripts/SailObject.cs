@@ -8,7 +8,6 @@ public class SailObject : MonoBehaviour
     public Camera MainCamera;
     public GameObject sailTextBox;
     int countClicks = 0;
-    public SailHandling sailHandling;
     public GameObject sails;
     public Material NoOutline;
     public Material Outline;
@@ -40,6 +39,7 @@ public class SailObject : MonoBehaviour
         }
         
     }
+
 
     // Update is called once per frame
     void Update()

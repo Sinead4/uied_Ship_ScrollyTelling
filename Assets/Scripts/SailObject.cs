@@ -9,6 +9,9 @@ public class SailObject : MonoBehaviour
     public GameObject sailTextBox;
     int countClicks = 0;
     public SailHandling sailHandling;
+    public GameObject sails;
+    public Material NoOutline;
+    public Material Outline;
 
 
     void Start()
@@ -22,15 +25,18 @@ public class SailObject : MonoBehaviour
 
         if(countClicks%2 != 0)
         {
+            Debug.Log("in OnMouseDown if clause");
             sailTextBox.SetActive(true);
             sailTextBox.transform.LookAt(MainCamera.transform);
-            this.GetComponent<MeshRenderer>().material.shader = sailHandling.NoOutlineShader;
-      
+            sails.GetComponent<Renderer>().material.CopyPropertiesFromMaterial(NoOutline);
+            // sails.GetComponent<Renderer>().material = NoOutline;
         }
         else
         {
+            Debug.Log("in OnMouseDown else clause");
             sailTextBox.SetActive(false);
-            this.GetComponent<MeshRenderer>().material.shader = sailHandling.OutlineShader;
+            
+            sails.GetComponent<Renderer>().material.CopyPropertiesFromMaterial(Outline);
         }
         
     }

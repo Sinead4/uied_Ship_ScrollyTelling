@@ -753,7 +753,7 @@ MonoBehaviour:
   sailMiddleFront: {fileID: 805663108}
   sailMiddleBack: {fileID: 1661938069}
   OutlineShader: {fileID: 4800000, guid: e9fc20dac6ccc084187f0e6e8d64e1a6, type: 3}
-  NoOutlineShader: {fileID: 4800000, guid: 0e9d5a909a1f7e84882a534d0d11e49f, type: 3}
+  NoOutlineShader: {fileID: 4800000, guid: c485ed502fed0a042bf86cb49a03c4f7, type: 3}
   growthBound: 1.01
   shrinkBound: 0.99
   currentRatio: 1
@@ -897,7 +897,6 @@ GameObject:
   - component: {fileID: 441226408}
   - component: {fileID: 441226407}
   - component: {fileID: 441226406}
-  - component: {fileID: 441226410}
   m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
@@ -981,21 +980,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &441226410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441226405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eadf2970408b2b348bbbc8ebde75b83f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainCamera: {fileID: 0}
-  sailTextBox: {fileID: 0}
-  sailHandling: {fileID: 0}
 --- !u!1 &472341149
 GameObject:
   m_ObjectHideFlags: 0
@@ -2291,6 +2275,9 @@ MonoBehaviour:
   MainCamera: {fileID: 963194227}
   sailTextBox: {fileID: 954915647}
   sailHandling: {fileID: 272956183}
+  sails: {fileID: 805663108}
+  NoOutline: {fileID: 2100000, guid: 568dfe6c51337dd49862d481ee2768bd, type: 2}
+  Outline: {fileID: 2100000, guid: 667bbf9178449f24e95e311f7a1040b6, type: 2}
 --- !u!1 &828908778
 GameObject:
   m_ObjectHideFlags: 0

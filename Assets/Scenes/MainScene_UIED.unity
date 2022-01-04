@@ -837,10 +837,10 @@ MonoBehaviour:
   sailFrontAndBackMaterial: {fileID: 2100000, guid: fc124afc457b3d243b2724a74cf6178f, type: 2}
   sailMiddleFrontMaterial: {fileID: 2100000, guid: 617006c9c06f67644b40f57002f48775, type: 2}
   sailMiddleBackMaterial: {fileID: 2100000, guid: 32c82854dbbed5545ad5fe8663e0574d, type: 2}
-  growthBound: 1.2
-  shrinkBound: 1
+  growthBound: 1.01
+  shrinkBound: 0.99
   currentRatio: 1
-  approachSpeed: 0.5
+  approachSpeed: 0.02
 --- !u!1 &334919720
 GameObject:
   m_ObjectHideFlags: 0

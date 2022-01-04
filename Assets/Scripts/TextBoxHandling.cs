@@ -99,7 +99,7 @@ public class TextBoxHandling : MonoBehaviour
 
     public void sailsTextBoxes(float distance)
     {
-        if (distance < 510 || distance >= 700)
+        if (distance < 510 || distance >= 640)
         {
             sailsTextBox1.SetActive(false);
             sailsTextBox2.SetActive(false);

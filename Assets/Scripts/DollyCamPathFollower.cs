@@ -36,6 +36,7 @@ namespace ShipScrolly
 
         void FixedUpdate()
         {
+            Debug.Log("Distance Traveled: " + distanceTraveled);
             distanceTraveled += (speed * Input.mouseScrollDelta.y)*-1;
             cinemachineCamera = vCam1.GetCinemachineComponent<CinemachineTrackedDolly> ();
             cinemachineCamera.m_PathPosition = distanceTraveled;

@@ -1570,7 +1570,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -967, y: -100}
+  m_AnchoredPosition: {x: -1068, y: 29}
   m_SizeDelta: {x: 1300, y: 754}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &649817692
@@ -1598,7 +1598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.17932703, g: 0.13105197, b: 0.2924528, a: 1}
+  m_Color: {r: 0.11390174, g: 0.18712567, b: 0.254717, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1607,7 +1607,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 110263e9a655d2345b79adc445608d8b, type: 3}
-    m_FontSize: 75
+    m_FontSize: 110
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -2878,7 +2878,7 @@ GameObject:
   - component: {fileID: 1115099928}
   - component: {fileID: 1115099927}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: QuestionCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3637,7 +3637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 490086417}
-  m_PathPosition: 1730
+  m_PathPosition: 1720
   m_PositionUnits: 1
   m_PathOffset: {x: -0.042402655, y: 0.0978885, z: 12.9995575}
   m_XDamping: 2
@@ -3933,7 +3933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
+  m_Color: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3942,10 +3942,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 55
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 62
     m_Alignment: 4
     m_AlignByGeometry: 0

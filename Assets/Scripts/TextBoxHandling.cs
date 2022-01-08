@@ -38,7 +38,7 @@ public class TextBoxHandling : MonoBehaviour
 
     public void titleHandling(float distance)
     {
-        if (distance >= 230)
+        if (distance >= 160)
         {
             title.SetActive(false);
         }

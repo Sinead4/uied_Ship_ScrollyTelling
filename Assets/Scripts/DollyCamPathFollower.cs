@@ -37,20 +37,14 @@ namespace ShipScrolly
 
         void FixedUpdate()
         {
-            Debug.Log("Distance Traveled: " + distanceTraveled);
             distanceTraveled += (speed * Input.mouseScrollDelta.y)*-1;
             cinemachineCamera = vCam1.GetCinemachineComponent<CinemachineTrackedDolly> ();
             cinemachineCamera.m_PathPosition = distanceTraveled;
-            //vCam1.m_LookAt = textBoxHandling.title.transform;
 
             //Change look at point--------------------------
             if (distanceTraveled > 150)
             {
                 vCam1.m_LookAt = LookAtPoint;
-            }
-            else
-            {
-                //vCam1.m_LookAt = textBoxHandling.title.transform;
             }
 
             //Change camera -----------------------------------

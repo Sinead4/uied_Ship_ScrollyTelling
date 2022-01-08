@@ -10,41 +10,44 @@ public class ShipsWheelRotation : MonoBehaviour
     public GameObject ship;
     public GameObject shipsWheelCanvas;
     
-    public TextMesh text;
+    public Text text;
 
+    public GameObject answerCanvas;
+    
     Vector3 changePosition = new Vector3(0, 5, -7);
+
+    private void Start()
+    {
+        answerCanvas.SetActive(false);
+    }
 
     private void OnMouseDrag()
     {
         transform.Rotate((Vector3.forward*Input.GetAxis("Mouse X")*rotationSpeed)*(-1), Space.Self);
         ship.transform.Rotate((Vector3.up*Input.GetAxis("Mouse X")*rotationSpeed), Space.World);
-        
-        shipsWheelCanvas.transform.rotation = ship.transform.rotation;
-        
+
         QuestionAnswerHandling();
        
     }
     public void QuestionHandling(float distanceTraveled)
     {
-        shipsWheelCanvas.transform.position = ship.transform.position + changePosition;
-        
         if (distanceTraveled > 1700)
         {
-            shipsWheelCanvas.SetActive(true);
+            answerCanvas.SetActive(true);
         }
         else
         {
-            shipsWheelCanvas.SetActive(false);
+            answerCanvas.SetActive(false);
         }
     }
 
     public void QuestionAnswerHandling()
     {
-        if (Input.GetAxis("Mouse X") < 0)
+        if (Input.GetAxis("Mouse X") < -0.1)
         {
             text.text = "Bravo";
         }
-        else if (Input.GetAxis("Mouse X") > 0)
+        else if (Input.GetAxis("Mouse X") > 0.1)
         {
             text.text = "Das war leider falsch";
         }

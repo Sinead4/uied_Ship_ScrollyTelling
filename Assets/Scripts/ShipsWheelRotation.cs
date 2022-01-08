@@ -31,7 +31,7 @@ public class ShipsWheelRotation : MonoBehaviour
     }
     public void QuestionHandling(float distanceTraveled)
     {
-        if (distanceTraveled > 1700)
+        if (distanceTraveled > 1710)
         {
             answerCanvas.SetActive(true);
         }
@@ -49,7 +49,7 @@ public class ShipsWheelRotation : MonoBehaviour
         }
         else if (Input.GetAxis("Mouse X") > 0.1)
         {
-            text.text = "Das war leider falsch";
+            text.text = "Das war leider falsch, versuchs nochmals";
         }
     }
 }

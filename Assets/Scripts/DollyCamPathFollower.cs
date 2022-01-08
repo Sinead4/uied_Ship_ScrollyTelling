@@ -22,6 +22,7 @@ namespace ShipScrolly
         public SailHandling sailHandling;
         public ConstantMovement constantMovement;
         public MilesTextHandling milesTextHandling;
+        public ShipsWheelRotation shipsWheelRotation;
 
         public GameObject sailOne;
         public GameObject sailTwo;
@@ -53,23 +54,23 @@ namespace ShipScrolly
             }
 
             //Change camera -----------------------------------
-            if (distanceTraveled>650)
+            if (distanceTraveled > 700)
             {
                 vCam1.Priority = 1;
                 vCam2.Priority = 11;
             }
-            else if (distanceTraveled < 650)
+            else if (distanceTraveled < 700)
             {
                 vCam2.Priority = 9;
             }
-            if (distanceTraveled > 1500)
+            if (distanceTraveled > 1700)
             {
                 sailOne.SetActive(false);
                 sailTwo.SetActive(false);
                 
             }
 
-            if (distanceTraveled > 1510)
+            if (distanceTraveled > 1710)
             {
                 vCam2.Priority = 9;
                 vCam3.Priority = 12;
@@ -78,12 +79,12 @@ namespace ShipScrolly
             textBoxHandling.titleHandling(distanceTraveled);
             textBoxHandling.textBoxes(distanceTraveled);
             textBoxHandling.sailsTextBoxes(distanceTraveled);
-            
             textBoxHandling.KnotenHandling(colonialShip.transform.position, distanceTraveled);
             
-            textBoxHandling.QuestionHandling(colonialShip.transform.position, distanceTraveled);
+            shipsWheelRotation.QuestionHandling(distanceTraveled);
             
             sailHandling.handlineOutlineShader(distanceTraveled);
+            
             constantMovement.ConstantShipMovement(distanceTraveled);
             
             milesTextHandling.MilesTextPositioning(colonialShip.transform.position, (int)distanceTraveled);

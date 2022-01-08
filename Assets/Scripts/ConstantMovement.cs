@@ -6,15 +6,14 @@ using UnityEngine;
 
 public class ConstantMovement : MonoBehaviour
 {
-    public float speed;
+    public float shipSpeed;
 
     public void ConstantShipMovement(float distanceTraveled)
     {
-        speed = distanceTraveled / 35 + 20 * distanceTraveled / 400;
-        //if (distanceTraveled > 650 && distanceTraveled < 1500) 
-        if (distanceTraveled > 650)
+        shipSpeed = distanceTraveled / 35 + 20 * distanceTraveled / 400;
+        if (distanceTraveled > 700)
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            transform.Translate(Vector3.forward * Time.deltaTime * shipSpeed);
         }
         
     }

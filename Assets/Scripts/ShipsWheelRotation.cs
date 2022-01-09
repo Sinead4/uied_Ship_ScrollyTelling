@@ -45,7 +45,7 @@ public class ShipsWheelRotation : MonoBehaviour
     {
         if (Input.GetAxis("Mouse X") < -0.1)
         {
-            text.text = "Bravo";
+            text.text = "Bravo!";
         }
         else if (Input.GetAxis("Mouse X") > 0.1)
         {

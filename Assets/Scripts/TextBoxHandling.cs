@@ -18,14 +18,16 @@ public class TextBoxHandling : MonoBehaviour
 
     public GameObject shipsWheelCanvas;
 
+    public AudioSource wavesAudio;
+
     // Start is called before the first frame update
     void Start()
     {
-        firstTextBox = GameObject.Find("FirstTextBox");
+        firstTextBox = GameObject.Find("Einleitungsbox");
         firstTextBox.SetActive(false);
 
         //dcpf = new DollyCamPathFollower();
-        title = GameObject.Find("TitleObject");
+        title = GameObject.Find("Titel");
         title.SetActive(true);
 
         compass = GameObject.Find("Kompass");
@@ -75,6 +77,7 @@ public class TextBoxHandling : MonoBehaviour
         knotenTextBox.transform.position = position+changeZPosition;
         if (distanceTraveled >= 700 && distanceTraveled <= 1700)
         {
+            wavesAudio.volume = 0f;
             knotenTextBox.SetActive(true);
         }
         else

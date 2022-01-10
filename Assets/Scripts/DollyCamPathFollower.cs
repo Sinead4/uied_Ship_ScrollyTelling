@@ -23,6 +23,7 @@ namespace ShipScrolly
         public ConstantMovement constantMovement;
         public MilesTextHandling milesTextHandling;
         public ShipsWheelRotation shipsWheelRotation;
+        public AudioManager audioManager;
 
         public GameObject sailOne;
         public GameObject sailTwo;
@@ -69,6 +70,7 @@ namespace ShipScrolly
                 vCam2.Priority = 9;
                 vCam3.Priority = 12;
             }
+
             
             textBoxHandling.titleHandling(distanceTraveled);
             textBoxHandling.textBoxes(distanceTraveled);
@@ -82,6 +84,11 @@ namespace ShipScrolly
             constantMovement.ConstantShipMovement(distanceTraveled);
             
             milesTextHandling.MilesTextPositioning(colonialShip.transform.position, (int)distanceTraveled);
+        }
+
+        private void Update()
+        {
+            audioManager.handleWaves(distanceTraveled);
         }
     }
     

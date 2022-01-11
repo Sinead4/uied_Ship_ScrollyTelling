@@ -8,7 +8,7 @@ public class TextBoxHandling : MonoBehaviour
     public GameObject firstTextBox;
     public GameObject sailsTextBox1;
     public GameObject sailsTextBox2;
-    public GameObject title { get; set; }
+    public GameObject title;
 
     public GameObject compass;
 
@@ -27,7 +27,7 @@ public class TextBoxHandling : MonoBehaviour
         firstTextBox.SetActive(false);
 
         //dcpf = new DollyCamPathFollower();
-        title = GameObject.Find("Titel");
+        title = GameObject.Find("TitelObject");
         title.SetActive(true);
 
         compass = GameObject.Find("Kompass");
@@ -49,7 +49,7 @@ public class TextBoxHandling : MonoBehaviour
     public void textBoxes(float distance)
     {
 
-        if (distance >= 230 && distance <= 350)
+        if (distance >= 300 && distance <= 420)
         {
             firstTextBox.SetActive(true);
             firstTextBox.transform.LookAt(MainCamera.transform);
@@ -60,7 +60,7 @@ public class TextBoxHandling : MonoBehaviour
             firstTextBox.SetActive(false);
         }
 
-        if(distance >= 390 && distance <= 490)
+        if(distance >= 490 && distance <= 620)
         {
             compass.SetActive(true);
         }
@@ -75,7 +75,7 @@ public class TextBoxHandling : MonoBehaviour
     {
         Vector3 changeZPosition = new Vector3(-65, 25, -20);
         knotenTextBox.transform.position = position+changeZPosition;
-        if (distanceTraveled >= 700 && distanceTraveled <= 1700)
+        if (distanceTraveled >= 850 && distanceTraveled <= 1700)
         {
             wavesAudio.volume = 0f;
             knotenTextBox.SetActive(true);
@@ -88,7 +88,7 @@ public class TextBoxHandling : MonoBehaviour
 
     public void sailsTextBoxes(float distance)
     {
-        if (distance < 510 || distance >= 640)
+        if (distance < 640 || distance >= 780)
         {
             sailsTextBox1.SetActive(false);
             sailsTextBox2.SetActive(false);

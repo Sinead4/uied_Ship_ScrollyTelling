@@ -9,7 +9,7 @@ public class ShipsWheelRotation : MonoBehaviour
     private float rotationSpeed = 4f;
     public GameObject ship;
     public GameObject shipsWheelCanvas;
-    public GameObject endBox;
+    public GameObject exitButton;
     
     public Text text;
 
@@ -19,7 +19,7 @@ public class ShipsWheelRotation : MonoBehaviour
 
     private void Start()
     {
-        endBox.SetActive(false);
+        exitButton.SetActive(false);
         answerCanvas.SetActive(false);
     }
 
@@ -47,7 +47,7 @@ public class ShipsWheelRotation : MonoBehaviour
     {
         if (Input.GetAxis("Mouse X") < -0.1)
         {   
-            endBox.SetActive(true);
+            exitButton.SetActive(true);
             text.text = "Bravo!";
                         
         }

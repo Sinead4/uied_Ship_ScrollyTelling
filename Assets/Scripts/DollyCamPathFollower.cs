@@ -23,7 +23,7 @@ namespace ShipScrolly
         public ConstantMovement constantMovement;
         public MilesTextHandling milesTextHandling;
         public ShipsWheelRotation shipsWheelRotation;
-        public AudioManager audioManager;
+        public AudioHandler audioHandler;
 
         public GameObject sailOne;
         public GameObject sailTwo;
@@ -38,6 +38,7 @@ namespace ShipScrolly
 
         void FixedUpdate()
         {
+            Debug.Log("Distance: " + distanceTraveled);
             distanceTraveled += (speed * Input.mouseScrollDelta.y)*-1;
             cinemachineCamera = vCam1.GetCinemachineComponent<CinemachineTrackedDolly> ();
             cinemachineCamera.m_PathPosition = distanceTraveled;
@@ -49,12 +50,12 @@ namespace ShipScrolly
             }
 
             //Change camera -----------------------------------
-            if (distanceTraveled > 700)
+            if (distanceTraveled > 850)
             {
                 vCam1.Priority = 1;
                 vCam2.Priority = 11;
             }
-            else if (distanceTraveled < 700)
+            else if (distanceTraveled < 850)
             {
                 vCam2.Priority = 9;
             }
@@ -88,7 +89,7 @@ namespace ShipScrolly
 
         private void Update()
         {
-            audioManager.handleWaves(distanceTraveled);
+           audioHandler.handleWaves(distanceTraveled);
         }
     }
     

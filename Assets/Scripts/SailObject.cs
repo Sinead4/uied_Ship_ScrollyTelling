@@ -28,13 +28,14 @@ public class SailObject : MonoBehaviour
             sailTextBox.SetActive(true);
             sailTextBox.transform.LookAt(MainCamera.transform);
             sails.GetComponent<Renderer>().material.CopyPropertiesFromMaterial(NoOutline);
-            // sails.GetComponent<Renderer>().material = NoOutline;
+           //  sails.GetComponent<Renderer>().material = NoOutline;
         }
         else
         {
             Debug.Log("in OnMouseDown else clause");
             sailTextBox.SetActive(false);
 
+            //sails.GetComponent<Renderer>().material = Outline;
             sails.GetComponent<Renderer>().material.CopyPropertiesFromMaterial(Outline);
         }
 

@@ -10,7 +10,7 @@ public class EndApp : MonoBehaviour
         
     }
 
-    public void OnMouseDown()
+    public void ExitApp()
     {
         Application.Quit();
     }

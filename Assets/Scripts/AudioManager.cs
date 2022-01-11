@@ -53,11 +53,5 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    public void handleWaves(float distance)
-    {
-        if(distance > 700)
-        {
-            FindObjectOfType<AudioManager>().Play("WilderWaves");
-        }
-    }
+    
 }

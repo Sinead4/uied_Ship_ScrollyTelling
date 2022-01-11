@@ -33,7 +33,7 @@ public class SailHandling : MonoBehaviour
 
     public void handlineOutlineShader(float distance)
     {
-        if (distance > 660 && distance <= 730)
+        if (distance > 660 && distance <= 840)
         {
 
             sailFrontAndBack.GetComponent<MeshRenderer>().material.shader = OutlineShader;

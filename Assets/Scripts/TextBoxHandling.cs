@@ -8,6 +8,7 @@ public class TextBoxHandling : MonoBehaviour
     public GameObject firstTextBox;
     public GameObject sailsTextBox1;
     public GameObject sailsTextBox2;
+    public GameObject sailsInfoBox;
     public GameObject title;
 
     public GameObject compass;
@@ -88,8 +89,14 @@ public class TextBoxHandling : MonoBehaviour
 
     public void sailsTextBoxes(float distance)
     {
+        if(distance > 640 && distance < 850)
+        {
+            sailsInfoBox.SetActive(true);
+        }
+       
         if (distance < 640 || distance >= 780)
         {
+            sailsInfoBox.SetActive(false);
             sailsTextBox1.SetActive(false);
             sailsTextBox2.SetActive(false);
         }

@@ -10,7 +10,8 @@ public class WaterFloat : MonoBehaviour
 
     public Vector3 AxisOffsetSpeed;                                       //speed of moving object along an axis
 
-    Transform actualPos;                                                  //save the actual transform
+    Transform actualPos; //save the actual transform
+    
 
 
 

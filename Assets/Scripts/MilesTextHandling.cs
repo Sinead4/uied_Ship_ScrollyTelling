@@ -12,7 +12,7 @@ public class MilesTextHandling : MonoBehaviour
 
     public void MilesTextPositioning(Vector3 position, int distanceTraveled)
     {
-        if (distanceTraveled > 850 && distanceTraveled < 1700)
+        if (distanceTraveled > 830 && distanceTraveled < 1400)
         {
             currentSpeedText.gameObject.SetActive(true);
         }

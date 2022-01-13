@@ -8,7 +8,7 @@ public class ShipsWheelRotation : MonoBehaviour
 {
     private float rotationSpeed = 4f;
     public GameObject ship;
-    public GameObject shipsWheelCanvas;
+    public GameObject wheel;
     public GameObject exitButton;
     
     public Text text;
@@ -17,10 +17,17 @@ public class ShipsWheelRotation : MonoBehaviour
     
     Vector3 changePosition = new Vector3(0, 5, -7);
 
+    public Texture2D dragCursor;
+
     private void Start()
     {
         exitButton.SetActive(false);
         answerCanvas.SetActive(false);
+    }
+
+    private void Update()
+    {
+        ChangeCursor(dragCursor);
     }
 
     private void OnMouseDrag()
@@ -33,8 +40,10 @@ public class ShipsWheelRotation : MonoBehaviour
     }
     public void QuestionHandling(float distanceTraveled)
     {
-        if (distanceTraveled > 1710)
+        if (distanceTraveled > 1410)
         {
+            Cursor.visible = true;
+            Cursor.SetCursor(dragCursor, Vector2.zero, CursorMode.Auto);
             answerCanvas.SetActive(true);
         }
         else
@@ -54,6 +63,15 @@ public class ShipsWheelRotation : MonoBehaviour
         else if (Input.GetAxis("Mouse X") > 0.1)
         {
             text.text = "Das war leider falsch, versuchs nochmals";
+        }
+    }
+
+    private void ChangeCursor(Texture2D cursor)
+    {
+        Debug.Log("Mouse: "+Input.mousePosition + "wheel: "+transform.position);
+        if (Input.mousePosition.y == transform.position.y && Input.mousePosition.z == transform.position.z)
+        {
+            Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
         }
     }
 }

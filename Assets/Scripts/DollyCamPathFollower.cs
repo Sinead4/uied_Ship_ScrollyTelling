@@ -50,23 +50,23 @@ namespace ShipScrolly
             }
 
             //Change camera -----------------------------------
-            if (distanceTraveled > 850)
+            if (distanceTraveled > 830)
             {
                 vCam1.Priority = 1;
                 vCam2.Priority = 11;
             }
-            else if (distanceTraveled < 850)
+            else if (distanceTraveled < 830)
             {
                 vCam2.Priority = 9;
             }
-            if (distanceTraveled > 1700)
+            if (distanceTraveled > 1400)
             {
                 sailOne.SetActive(false);
                 sailTwo.SetActive(false);
                 
             }
 
-            if (distanceTraveled > 1710)
+            if (distanceTraveled > 1400)
             {
                 vCam2.Priority = 9;
                 vCam3.Priority = 12;

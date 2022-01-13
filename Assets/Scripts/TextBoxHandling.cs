@@ -21,6 +21,8 @@ public class TextBoxHandling : MonoBehaviour
 
     public AudioSource wavesAudio;
 
+    public Texture2D dragCursor;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,7 +78,7 @@ public class TextBoxHandling : MonoBehaviour
     {
         Vector3 changeZPosition = new Vector3(-65, 25, -20);
         knotenTextBox.transform.position = position+changeZPosition;
-        if (distanceTraveled >= 850 && distanceTraveled <= 1700)
+        if (distanceTraveled >= 830 && distanceTraveled <= 1400)
         {
             wavesAudio.volume = 0f;
             knotenTextBox.SetActive(true);
@@ -92,6 +94,16 @@ public class TextBoxHandling : MonoBehaviour
         if(distance > 640 && distance < 850)
         {
             sailsInfoBox.SetActive(true);
+        }
+
+        if (distance > 700 && distance < 830)
+        {
+            Cursor.visible = true;
+            Cursor.SetCursor(dragCursor, Vector2.zero, CursorMode.Auto);
+        }
+        else
+        {
+            Cursor.visible = false;
         }
        
         if (distance < 640 || distance >= 780)

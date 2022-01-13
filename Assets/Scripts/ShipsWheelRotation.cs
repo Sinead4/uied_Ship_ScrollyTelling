@@ -33,14 +33,14 @@ public class ShipsWheelRotation : MonoBehaviour
     private void OnMouseDrag()
     {
         transform.Rotate((Vector3.forward*Input.GetAxis("Mouse X")*rotationSpeed)*(-1), Space.Self);
-        ship.transform.Rotate((Vector3.up*Input.GetAxis("Mouse X")*rotationSpeed), Space.World);
+        ship.transform.Rotate((Vector3.up*Input.GetAxis("Mouse X")*50*Time.deltaTime), Space.World);
 
         QuestionAnswerHandling();
        
     }
     public void QuestionHandling(float distanceTraveled)
     {
-        if (distanceTraveled > 1410)
+        if (distanceTraveled > 1400)
         {
             Cursor.visible = true;
             Cursor.SetCursor(dragCursor, Vector2.zero, CursorMode.Auto);
@@ -54,13 +54,13 @@ public class ShipsWheelRotation : MonoBehaviour
 
     public void QuestionAnswerHandling()
     {
-        if (Input.GetAxis("Mouse X") < -0.1)
+        if (Input.GetAxis("Mouse X") < -0.3)
         {   
             exitButton.SetActive(true);
             text.text = "Bravo!";
                         
         }
-        else if (Input.GetAxis("Mouse X") > 0.1)
+        else if (Input.GetAxis("Mouse X") > 0.3)
         {
             text.text = "Das war leider falsch, versuchs nochmals";
         }

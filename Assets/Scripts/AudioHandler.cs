@@ -6,17 +6,13 @@ public class AudioHandler : MonoBehaviour
 {
     public AudioSource WaveAudio;
     // Start is called before the first frame update
-    void Start()
-    {
-         
-    }
 
     public void handleWaves(float distance)
     {
-        if (distance > 850)
+        if (distance > 830)
         {
             WaveAudio.volume = 0.891f;
-            WaveAudio.pitch = 2.57f;
+            WaveAudio.pitch = 2.0f;
         }
     }
 }

@@ -8,15 +8,9 @@ public class ShipsWheelRotation : MonoBehaviour
 {
     private float rotationSpeed = 4f;
     public GameObject ship;
-    public GameObject wheel;
     public GameObject exitButton;
-    
     public Text text;
-
     public GameObject answerCanvas;
-    
-    Vector3 changePosition = new Vector3(0, 5, -7);
-
     public Texture2D dragCursor;
 
     private void Start()
@@ -52,13 +46,12 @@ public class ShipsWheelRotation : MonoBehaviour
         }
     }
 
-    public void QuestionAnswerHandling()
+    private void QuestionAnswerHandling()
     {
         if (Input.GetAxis("Mouse X") < -0.3)
         {   
             exitButton.SetActive(true);
             text.text = "Bravo!";
-                        
         }
         else if (Input.GetAxis("Mouse X") > 0.3)
         {
@@ -68,7 +61,6 @@ public class ShipsWheelRotation : MonoBehaviour
 
     private void ChangeCursor(Texture2D cursor)
     {
-        Debug.Log("Mouse: "+Input.mousePosition + "wheel: "+transform.position);
         if (Input.mousePosition.y == transform.position.y && Input.mousePosition.z == transform.position.z)
         {
             Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);

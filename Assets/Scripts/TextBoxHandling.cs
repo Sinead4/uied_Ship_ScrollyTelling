@@ -10,17 +10,10 @@ public class TextBoxHandling : MonoBehaviour
     public GameObject sailsTextBox2;
     public GameObject sailsInfoBox;
     public GameObject title;
-
     public GameObject compass;
-
     public Camera MainCamera;
-
     public GameObject knotenTextBox;
-
-    public GameObject shipsWheelCanvas;
-
     public AudioSource wavesAudio;
-
     public Texture2D dragCursor;
 
     // Start is called before the first frame update
@@ -28,8 +21,7 @@ public class TextBoxHandling : MonoBehaviour
     {
         firstTextBox = GameObject.Find("Einleitungsbox");
         firstTextBox.SetActive(false);
-
-        //dcpf = new DollyCamPathFollower();
+        
         title = GameObject.Find("TitelObject");
         title.SetActive(true);
 
@@ -51,12 +43,10 @@ public class TextBoxHandling : MonoBehaviour
 
     public void textBoxes(float distance)
     {
-
         if (distance >= 300 && distance <= 420)
         {
             firstTextBox.SetActive(true);
             firstTextBox.transform.LookAt(MainCamera.transform);
-            
         }
         else
         {
@@ -71,13 +61,13 @@ public class TextBoxHandling : MonoBehaviour
         {
             compass.SetActive(false);
         }
-
     }
     
     public void KnotenHandling(Vector3 position, float distanceTraveled)
     {
         Vector3 changeZPosition = new Vector3(-65, 25, -20);
         knotenTextBox.transform.position = position+changeZPosition;
+        
         if (distanceTraveled >= 830 && distanceTraveled <= 1400)
         {
             wavesAudio.volume = 0f;

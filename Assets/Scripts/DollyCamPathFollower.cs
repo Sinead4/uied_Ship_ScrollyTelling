@@ -77,13 +77,9 @@ namespace ShipScrolly
             textBoxHandling.textBoxes(distanceTraveled);
             textBoxHandling.sailsTextBoxes(distanceTraveled);
             textBoxHandling.KnotenHandling(colonialShip.transform.position, distanceTraveled);
-            
             shipsWheelRotation.QuestionHandling(distanceTraveled);
-            
             sailHandling.handlineOutlineShader(distanceTraveled);
-            
             constantMovement.ConstantShipMovement(distanceTraveled);
-            
             milesTextHandling.MilesTextPositioning(colonialShip.transform.position, (int)distanceTraveled);
         }
 

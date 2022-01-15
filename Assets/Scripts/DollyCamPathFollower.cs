@@ -1,7 +1,5 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Cinemachine;
-using UnityEngine.Serialization;
 
 
 namespace ShipScrolly

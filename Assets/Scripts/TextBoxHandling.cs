@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using ShipScrolly;
+
 
 public class TextBoxHandling : MonoBehaviour
 {
@@ -53,7 +51,7 @@ public class TextBoxHandling : MonoBehaviour
             firstTextBox.SetActive(false);
         }
 
-        if(distance >= 490 && distance <= 620)
+        if(distance >= 490 && distance <= 720)
         {
             compass.SetActive(true);
         }

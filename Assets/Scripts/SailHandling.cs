@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SailHandling : MonoBehaviour
@@ -20,16 +19,6 @@ public class SailHandling : MonoBehaviour
     private Coroutine routine;
     private bool isPulsing = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-     
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
 
     public void handlineOutlineShader(float distance)
     {
@@ -41,7 +30,7 @@ public class SailHandling : MonoBehaviour
             sailMiddleBack.GetComponent<MeshRenderer>().material.shader = OutlineShader;
             if (!isPulsing)
             {
-                this.routine = StartCoroutine(this.Pulse());
+                routine = StartCoroutine(this.Pulse());
             }
 
         }

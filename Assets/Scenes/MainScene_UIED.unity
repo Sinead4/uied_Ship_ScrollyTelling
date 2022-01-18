@@ -775,7 +775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 334919721}
   m_Layer: 0
-  m_Name: TextBox
+  m_Name: Orientierung auf See Info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

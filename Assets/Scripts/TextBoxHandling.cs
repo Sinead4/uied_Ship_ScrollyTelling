@@ -20,13 +20,13 @@ public class TextBoxHandling : MonoBehaviour
         firstTextBox = GameObject.Find("Einleitungsbox");
         firstTextBox.SetActive(false);
         
-        title = GameObject.Find("TitelObject");
+        title = GameObject.Find("Titel_Schiffsfahrt");
         title.SetActive(true);
 
-        compass = GameObject.Find("Kompass");
+        compass = GameObject.Find("Orientierung auf See");
         compass.SetActive(false);
 
-        knotenTextBox = GameObject.Find("Knoten");
+        knotenTextBox = GameObject.Find("KnotenTextBox");
         knotenTextBox.SetActive(false);
 
     }
